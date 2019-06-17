@@ -30,12 +30,14 @@ public class Simulator {
                 int simulations = Integer.parseInt(line.split(" ")[0]);
                 System.out.println(simulations);
                 if (simulations <= 0) {
-                    System.out.println("Invalid simuations count " + simulations);
+                    System.out.println("Invalid simulations count " + simulations);
                     System.exit(1);
                 }
                 while ((line = reader.readLine()) != null) {
                     Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1],
-                            Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]));
+                            Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
+                            Integer.parseInt(line.split(" ")[4]));
+                    System.out.println(line);
                 }
             }
         } catch (FileNotFoundException e) {
