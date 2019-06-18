@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.avajLauncher.simulator.vehicles.Aircraft;
 import com.avajLauncher.simulator.vehicles.AircraftFactory;
 import com.avajLauncher.simulator.vehicles.Flyable;
 
@@ -40,10 +39,17 @@ public class Simulator {
                     System.out.println(line);
                 }
             }
+            reader.close();
+
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Path to input file not found!");
+            System.exit(1);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error while reading file!");
+            System.exit(1);
+        } catch (NumberFormatException e) {
+            System.out.println("The value provided is not an integer!");
+            System.exit(1);
         }
     }
 }
