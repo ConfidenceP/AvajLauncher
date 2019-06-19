@@ -17,7 +17,7 @@ public class Simulator {
     private static List<Flyable> flyables = new ArrayList<>();
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 
         //System.out.println("Hello Avaj-Launcher!!!");
 

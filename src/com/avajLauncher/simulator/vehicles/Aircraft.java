@@ -1,7 +1,5 @@
 package com.avajLauncher.simulator.vehicles;
 
-import com.avajLauncher.weather.Coordinates;
-
 public class Aircraft {
 
     protected long id;

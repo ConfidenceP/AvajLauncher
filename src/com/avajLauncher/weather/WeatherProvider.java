@@ -1,5 +1,7 @@
 package com.avajLauncher.weather;
 
+import com.avajLauncher.simulator.vehicles.Coordinates;
+
 public class WeatherProvider {
     private static WeatherProvider weatherProvider;
     private static String[] weather = {

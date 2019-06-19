@@ -1,13 +1,12 @@
 package com.avajLauncher.simulator.vehicles;
 
 import com.avajLauncher.simulator.WeatherTower;
-import com.avajLauncher.weather.Coordinates;
 
-public class JetPlane {
+public class JetPlane implements Flyable {
 
     private WeatherTower weatherTower;
 
-    JetPlane (String name, Coordinates coordinates) {
+    JetPlane(String name, Coordinates coordinates) {
 
     }
 
