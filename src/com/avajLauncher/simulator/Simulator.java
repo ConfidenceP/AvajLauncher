@@ -17,7 +17,7 @@ public class Simulator {
     private static List<Flyable> flyables = new ArrayList<>();
 
     public static void main(String[] args) {
-        // write your code here
+	// write your code here
 
         //System.out.println("Hello Avaj-Launcher!!!");
 
@@ -27,7 +27,7 @@ public class Simulator {
             if (line != null) {
                 weatherTower = new WeatherTower();
                 int simulations = Integer.parseInt(line.split(" ")[0]);
-                System.out.println(simulations);
+//                System.out.println(simulations);
                 if (simulations <= 0) {
                     System.out.println("Invalid simulations count " + simulations);
                     System.exit(1);
@@ -37,6 +37,11 @@ public class Simulator {
                             Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
                             Integer.parseInt(line.split(" ")[4]));
                     System.out.println(line);
+                    flyables.add(flyable);
+                }
+
+                for (Flyable flyable: flyables) {
+                    flyable.registerTower(weatherTower);
                 }
             }
             reader.close();

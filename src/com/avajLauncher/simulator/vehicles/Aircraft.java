@@ -7,8 +7,10 @@ public class Aircraft {
     protected Coordinates coordinates;
     private static long idCounter;
 
-    protected Aircraft(String name, Coordinates coordinates) {
-
+    protected Aircraft (String name, Coordinates coordinates) {
+        this.name = name;
+        this.coordinates = coordinates;
+        this.id = nextId();
     }
 
     private long nextId() {
