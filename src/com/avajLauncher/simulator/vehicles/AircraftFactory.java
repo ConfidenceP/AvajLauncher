@@ -1,6 +1,6 @@
 package com.avajLauncher.simulator.vehicles;
 
-public class AircraftFactory {
+public abstract class AircraftFactory {
 
     private static Flyable flyable = null;
 
