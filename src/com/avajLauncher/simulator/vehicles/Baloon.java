@@ -43,11 +43,9 @@ public class Baloon extends Aircraft implements Flyable {
         if (coordinates.getHeight() == 0) {
             Logger.addMessage("Baloon# " + this.name + this.id + " landing.");
             this.weatherTower.unregister(this);
-            Logger.addMessage("Tower says: Baloon#" + this.name + "(" + this.id + ") unregistered from weather tower.");
         }
 
         Logger.addMessage("Baloon#" + this.name + "(" + this.id + "): " + map.get(weather));
-//        System.out.println("Baloon#" + this.name + this.id +  );
     }
 
     public void registerTower(WeatherTower weatherTower) {

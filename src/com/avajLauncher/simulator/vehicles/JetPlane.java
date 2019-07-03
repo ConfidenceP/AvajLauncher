@@ -42,7 +42,6 @@ public class JetPlane extends Aircraft implements Flyable {
         if (coordinates.getHeight() == 0) {
             Logger.addMessage("JetPlane# " + this.name + this.id + " landing.");
             this.weatherTower.unregister(this);
-            Logger.addMessage("Tower says: Helicopter#" + this.name + "(" + this.id + ") unregistered from weather tower.");
         }
 
         Logger.addMessage("JetPlane#" + this.name + "(" + this.id + "): " + map.get(weather));
