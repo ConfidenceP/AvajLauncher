@@ -1,7 +1,7 @@
 package com.avajLauncher.simulator;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -45,7 +45,12 @@ public class Simulator {
             }
         } catch (IOException e) {
             System.exit(1);
-        } finally {
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.exit(1);
+        } catch (NumberFormatException e) {
+            System.exit(1);
+        }
+        finally {
             Logger.logMessage();
         }
     }

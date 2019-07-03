@@ -18,7 +18,7 @@ public class Helicopter extends Aircraft implements Flyable {
         map.put("SUN", "I see flames!");
         map.put("FOG", "I wonder if the radar can even find me here.");
         map.put("SNOW", "I think I'm in the middle of snowball war.");
-        map.put("RAIN", "Taking a bath high up here!");
+        map.put("RAIN", "Taking a bath up here!");
 
 
         String weather = weatherTower.getWeather(this.coordinates);
@@ -50,5 +50,9 @@ public class Helicopter extends Aircraft implements Flyable {
         this.weatherTower = weatherTower;
         this.weatherTower.register(this);
         Logger.addMessage("Tower says: Helicopter#" + this.name + "(" + this.id + ") registered to weather tower.");
+    }
+
+    public void unregisterTower() {
+        this.weatherTower.unregister(this);
     }
 }
