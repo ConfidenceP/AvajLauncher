@@ -1,6 +1,6 @@
 package com.avajLauncher.simulator.vehicles;
 
-public class Aircraft {
+public abstract class Aircraft {
 
     protected long id;
     protected String name;
