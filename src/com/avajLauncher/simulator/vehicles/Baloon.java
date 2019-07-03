@@ -1,5 +1,6 @@
 package com.avajLauncher.simulator.vehicles;
 
+import com.avajLauncher.simulator.Logger;
 import com.avajLauncher.simulator.WeatherTower;
 import com.avajLauncher.weather.WeatherProvider;
 
@@ -15,13 +16,12 @@ public class Baloon extends Aircraft implements Flyable {
 
     }
 
-    public void updateConditions()
-    {
+    public void updateConditions() {
         HashMap<String, String> map = new HashMap<>();
-        map.put("SUN", "its hot");
-        map.put("FOG", "its foggy");
-        map.put("SNOW", "its chilly");
-        map.put("RAIN", "its wetty");
+        map.put("SUN", "Its hot");
+        map.put("FOG", "Its foggy");
+        map.put("SNOW", "Its chilly");
+        map.put("RAIN", "I'm getting soaked up here");
 
 
         String weather = weatherTower.getWeather(this.coordinates);
@@ -42,19 +42,17 @@ public class Baloon extends Aircraft implements Flyable {
             this.coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(),
                     coordinates.getHeight() - 15 < 0 ? 0 : coordinates.getHeight() - 15);
         }
-        if (coordinates.getHeight() == 0)
-        {
-            System.out.println("Baloon# " + this.name + this.id + " landing.");
+        if (coordinates.getHeight() == 0) {
+            Logger.addMessage("Baloon# " + this.name + this.id + " landing.");
         }
 
-        System.out.println("Baloon# " + this.name + this.id +  " " + map.get(weather));
+        Logger.addMessage("Baloon#" + this.name + "(" + this.id + "): " + map.get(weather));
 //        System.out.println("Baloon#" + this.name + this.id +  );
     }
 
-    public void registerTower(WeatherTower weatherTower)
-    {
+    public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
         this.weatherTower.register(this);
-        System.out.println("Tower says: Baloon# " + this.name + this.id + "registered To weather");
+        Logger.addMessage("Tower says: Baloon#" + this.name + "(" + this.id + ") registered to weather tower.");
     }
 }

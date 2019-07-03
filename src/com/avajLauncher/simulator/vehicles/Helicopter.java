@@ -1,5 +1,6 @@
 package com.avajLauncher.simulator.vehicles;
 
+import com.avajLauncher.simulator.Logger;
 import com.avajLauncher.simulator.WeatherTower;
 
 import java.util.HashMap;
@@ -16,7 +17,7 @@ public class Helicopter extends Aircraft implements Flyable {
         HashMap<String, String> map = new HashMap<>();
         map.put("SUN", "I see flames!");
         map.put("FOG", "I wonder if the radar can even find me here");
-        map.put("SNOW", "I think I'm in the middle of snowball war.");
+        map.put("SNOW", "I think I'm in the middle of snowball war");
         map.put("RAIN", "Taking a bath high up here!");
 
 
@@ -38,19 +39,17 @@ public class Helicopter extends Aircraft implements Flyable {
             this.coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(),
                     coordinates.getHeight() - 12 < 0 ? 0 : coordinates.getHeight() - 12);
         }
-        if (coordinates.getHeight() == 0)
-        {
-            System.out.println("Helicopter# " + this.name + this.id + " landing.");
+        if (coordinates.getHeight() == 0) {
+            Logger.addMessage("Helicopter# " + this.name + this.id + " landing.");
         }
 
-        System.out.println("Helicopter# " + this.name + this.id +  " " + map.get(weather));
+        Logger.addMessage("Helicopter#" + this.name + "(" + this.id + "): " + map.get(weather));
 //        System.out.println("Baloon#" + this.name + this.id +  );
     }
 
-    public void registerTower(WeatherTower weatherTower)
-    {
+    public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
         this.weatherTower.register(this);
-        System.out.println("Tower says: Helicopter# " + this.name + this.id + "registered To weather");
+        Logger.addMessage("Tower says: Helicopter#" + this.name + "(" + this.id + ") registered to weather tower.");
     }
 }

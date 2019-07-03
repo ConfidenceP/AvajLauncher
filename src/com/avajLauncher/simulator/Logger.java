@@ -13,22 +13,21 @@ public class Logger {
 
     public static void logMessage() {
 
-        try{
+        try {
             File simulationFile = new File("simulation.txt");
             write = new PrintWriter(simulationFile);
-            for(String msg: messages) {
+            for (String msg : messages) {
                 write.println(msg);
             }
             write.close();
 
-        }catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Something went wrong reading file 'simulation.txt' ");
             System.exit(1);
         }
     }
 
-    public static void addMessage(String message)
-    {
+    public static void addMessage(String message) {
         messages.add(message);
     }
 }

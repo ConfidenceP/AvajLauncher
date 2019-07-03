@@ -19,7 +19,7 @@ public class Simulator {
     public static void main(String[] args) {
 
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))){
+        try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
 //            BufferedReader reader = new BufferedReader(new FileReader(args[0])); /** Instantiating BufferedReader **/
             String line = reader.readLine();
             if (line != null) {
@@ -38,25 +38,16 @@ public class Simulator {
                     flyables.add(flyable);
                 }
 
-                for (Flyable flyable: flyables) {
+                for (Flyable flyable : flyables) {
                     flyable.registerTower(weatherTower);
                 }
-                for(int i = 1; i <= simulations; i++)
-                {
+                for (int i = 1; i <= simulations; i++) {
                     weatherTower.changeWeather();
                 }
             }
-        }
-        catch (IOException e)
-        {
-            Logger.addMessage("error lol");
-        }
-
-        /** Look at creating class to handle exceptions **/
-
-        finally {
-            Logger.addMessage("**** finally i am done ****");
-//            reader.close(); /** Look at moving reader.close to finally block **/
+        } catch (IOException e) {
+            System.exit(1);
+        } finally {
             Logger.logMessage();
         }
     }

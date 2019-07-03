@@ -1,5 +1,6 @@
 package com.avajLauncher.simulator.vehicles;
 
+import com.avajLauncher.simulator.Logger;
 import com.avajLauncher.simulator.WeatherTower;
 
 import java.util.HashMap;
@@ -38,19 +39,17 @@ public class JetPlane extends Aircraft implements Flyable {
             this.coordinates = new Coordinates(coordinates.getLongitude(), coordinates.getLatitude(),
                     coordinates.getHeight() + 7 > 100 ? 100 : coordinates.getHeight() + 7);
         }
-        if (coordinates.getHeight() == 0)
-        {
-            System.out.println("JetPlane# " + this.name + this.id + " landing.");
+        if (coordinates.getHeight() == 0) {
+            Logger.addMessage("JetPlane# " + this.name + this.id + " landing.");
         }
 
-        System.out.println("JetPlane# " + this.name + this.id +  " " + map.get(weather));
+        Logger.addMessage("JetPlane#" + this.name + "(" + this.id + "): " + map.get(weather));
 //        System.out.println("Baloon#" + this.name + this.id +  );
     }
 
-    public void registerTower(WeatherTower weatherTower)
-    {
+    public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
         this.weatherTower.register(this);
-        System.out.println("Tower says: JetPlane# " + this.name + this.id + "registered To weather");
+        Logger.addMessage("Tower says: JetPlane#" + this.name + "(" + this.id + ") registered to weather tower.");
     }
 }
