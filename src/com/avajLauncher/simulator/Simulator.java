@@ -49,8 +49,7 @@ public class Simulator {
             System.exit(1);
         } catch (NumberFormatException e) {
             System.exit(1);
-        }
-        finally {
+        } finally {
             Logger.logMessage();
         }
     }

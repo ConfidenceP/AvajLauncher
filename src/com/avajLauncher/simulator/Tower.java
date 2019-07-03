@@ -1,6 +1,7 @@
 package com.avajLauncher.simulator;
 
 import com.avajLauncher.simulator.vehicles.Flyable;
+
 import java.util.ArrayList;
 
 public abstract class Tower {

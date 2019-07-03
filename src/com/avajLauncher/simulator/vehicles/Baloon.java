@@ -2,6 +2,7 @@ package com.avajLauncher.simulator.vehicles;
 
 import com.avajLauncher.simulator.Logger;
 import com.avajLauncher.simulator.WeatherTower;
+
 import java.util.HashMap;
 
 public class Baloon extends Aircraft implements Flyable {
@@ -41,6 +42,8 @@ public class Baloon extends Aircraft implements Flyable {
         }
         if (coordinates.getHeight() == 0) {
             Logger.addMessage("Baloon# " + this.name + this.id + " landing.");
+            this.weatherTower.unregister(this);
+            Logger.addMessage("Tower says: Baloon#" + this.name + "(" + this.id + ") unregistered from weather tower.");
         }
 
         Logger.addMessage("Baloon#" + this.name + "(" + this.id + "): " + map.get(weather));
