@@ -5,7 +5,7 @@ import com.avajLauncher.simulator.vehicles.Flyable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Tower {
+public class Tower {
 
     private List<Flyable> observers = new ArrayList<>();
 

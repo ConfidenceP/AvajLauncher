@@ -10,11 +10,8 @@ public class WeatherProvider {
             "RAIN", "FOG", "SUN", "SNOW"
     };
 
-    private WeatherProvider() {
-
-    }
-
     public static WeatherProvider getProvider() {
+
         return WeatherProvider.weatherProvider;
     }
 
@@ -25,7 +22,6 @@ public class WeatherProvider {
             rand = coordinateSum % 4;
             Random random = new Random();
             rand = random.nextInt(3);
-            rand = 3;
         }
         return weather[rand];
     }
