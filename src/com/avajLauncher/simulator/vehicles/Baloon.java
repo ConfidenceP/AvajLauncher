@@ -2,10 +2,7 @@ package com.avajLauncher.simulator.vehicles;
 
 import com.avajLauncher.simulator.Logger;
 import com.avajLauncher.simulator.WeatherTower;
-import com.avajLauncher.weather.WeatherProvider;
-
 import java.util.HashMap;
-import java.util.Map;
 
 public class Baloon extends Aircraft implements Flyable {
 
@@ -18,10 +15,10 @@ public class Baloon extends Aircraft implements Flyable {
 
     public void updateConditions() {
         HashMap<String, String> map = new HashMap<>();
-        map.put("SUN", "Its hot");
-        map.put("FOG", "Its foggy");
-        map.put("SNOW", "Its chilly");
-        map.put("RAIN", "I'm getting soaked up here");
+        map.put("SUN", "It is hot.");
+        map.put("FOG", "It is foggy.");
+        map.put("SNOW", "It is chilly.");
+        map.put("RAIN", "I am getting soaked.");
 
 
         String weather = weatherTower.getWeather(this.coordinates);

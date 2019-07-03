@@ -20,7 +20,6 @@ public class Simulator {
 
 
         try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
-//            BufferedReader reader = new BufferedReader(new FileReader(args[0])); /** Instantiating BufferedReader **/
             String line = reader.readLine();
             if (line != null) {
                 weatherTower = new WeatherTower();
@@ -34,7 +33,6 @@ public class Simulator {
                     Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1],
                             Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
                             Integer.parseInt(line.split(" ")[4]));
-//
                     flyables.add(flyable);
                 }
 

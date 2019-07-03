@@ -16,8 +16,8 @@ public class Helicopter extends Aircraft implements Flyable {
     public void updateConditions() {
         HashMap<String, String> map = new HashMap<>();
         map.put("SUN", "I see flames!");
-        map.put("FOG", "I wonder if the radar can even find me here");
-        map.put("SNOW", "I think I'm in the middle of snowball war");
+        map.put("FOG", "I wonder if the radar can even find me here.");
+        map.put("SNOW", "I think I'm in the middle of snowball war.");
         map.put("RAIN", "Taking a bath high up here!");
 
 
@@ -44,7 +44,6 @@ public class Helicopter extends Aircraft implements Flyable {
         }
 
         Logger.addMessage("Helicopter#" + this.name + "(" + this.id + "): " + map.get(weather));
-//        System.out.println("Baloon#" + this.name + this.id +  );
     }
 
     public void registerTower(WeatherTower weatherTower) {

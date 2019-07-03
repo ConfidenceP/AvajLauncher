@@ -44,7 +44,6 @@ public class JetPlane extends Aircraft implements Flyable {
         }
 
         Logger.addMessage("JetPlane#" + this.name + "(" + this.id + "): " + map.get(weather));
-//        System.out.println("Baloon#" + this.name + this.id +  );
     }
 
     public void registerTower(WeatherTower weatherTower) {
