@@ -2,6 +2,7 @@ package com.avajLauncher.simulator;
 
 import java.io.BufferedReader;
 //import java.io.FileNotFoundException;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -43,12 +44,17 @@ public class Simulator {
                     weatherTower.changeWeather();
                 }
             }
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
+            System.out.println("Input file not found!");
             System.exit(1);
-        } catch (ArrayIndexOutOfBoundsException e) {
+        }catch (IOException e) {
+            System.out.println("Input/output contents error!");
             System.exit(1);
         } catch (NumberFormatException e) {
+            System.out.println("Input value error. Check your inout file contents!");
             System.exit(1);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Specify scenario file");
         } finally {
             Logger.logMessage();
         }
